@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Users</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="scripts.js"></script>
+</head>
+<body>
+<form class="text-margin">
+    First name: <input type="text" id="txtfname"><br>
+    Last name: <input type="text" id="txtlname"><br>
+    Age: <input type="text" id="txtage"><br>
+    Address: <input type="text" id="txtaddress"><br>
+    <input type="submit" value="Add" onclick="addUser()">
+</form>
+<h3>Users List</h3>
+
+<table id="user-table" onsubmit="getUsers()">
+    <tr>
+        <th id="fn" class="text-bold">Firstname</th>
+        <th id="ln" class="text-bold">Lastname</th>
+        <th id="age" class="text-bold">Age</th>
+        <th id="address" class="text-bold">Address</th>
+    </tr>
+</table>
+</body>
+</html>

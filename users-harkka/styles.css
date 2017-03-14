@@ -1,0 +1,12 @@
+.text-margin{
+    display:inline-block;
+    text-align:right;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+.text-bold{
+    font-weight: bold;
+}
