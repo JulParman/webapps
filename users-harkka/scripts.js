@@ -21,7 +21,6 @@ function loadData() {
     }
 }
 
-
 function addContact() {
 
         newContact = createNewContactObject();
@@ -60,9 +59,7 @@ function getContact() {
 
 function writeLocalStorage(contacts){
     if (typeof(Storage) !== "undefined") {
-        // Store
         localStorage.setItem("contacts",JSON.stringify(contacts));
-
     } else {
         document.getElementById("header3").innerHTML = "Ei toimi";
     }
@@ -70,7 +67,6 @@ function writeLocalStorage(contacts){
 
 function getLocalStorage(){
     if (typeof(Storage) !== "undefined") {
-        // Store
         contacts = JSON.parse(localStorage.getItem("contacts"));
     } else {
         document.getElementById("header3").innerHTML = "Ei toimi";
@@ -84,9 +80,29 @@ function deleteRow(){
     var lastName = document.getElementById('txtlname').value;
     for(var i = 0;i<contacts.length;i++)
     {
-        if(contacts[i].firstName === firstName)
+        if(contacts[i].firstName === firstName && contacts[i].lastName === lastName)
         {
-            contacts.splice(i,4);
+            contacts.splice(i,1);
+        }
+    }
+    writeLocalStorage(contacts);
+}
+
+function updateRow(){
+    contacts = getLocalStorage();
+    var firstName = document.getElementById('txtfname').value;
+    var lastName = document.getElementById('txtlname').value;
+    var phone = document.getElementById('txtphone').value;
+    var address = document.getElementById('txtaddress').value;
+
+    for(var i = 0;i<contacts.length;i++)
+    {
+        if(contacts[i].firstName === firstName && contacts[i].lastName === lastName)
+        {
+            contacts[i].firstName = firstName;
+            contacts[i].lastName = lastName;
+            contacts[i].phone = phone;
+            contacts[i].address = address;
         }
     }
     writeLocalStorage(contacts);
