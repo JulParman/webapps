@@ -6,25 +6,28 @@
     <link rel="stylesheet" type="text/css" href="styles.css">
     <script src="scripts.js"></script>
 </head>
-<body>
+<body onload="loadData()">
 <form class="text-margin">
-    First name: <input type="text" id="txtfname"><br>
-    Last name: <input type="text" id="txtlname"><br>
-    Age: <input type="text" id="txtage"><br>
-    Address: <input type="text" id="txtaddress"><br>
-    <button onclick="addContact()">Add</button>
-    <!--<input type="submit" value="Add" onclick="addContact()">-->
+First name: <input type="text" id="txtfname"><br>
+Last name: <input type="text" id="txtlname"><br>
+Phone: <input type="text" id="txtphone"><br>
+Address: <input type="text" id="txtaddress"><br>
+<input type="button" value="Add" onclick="addContact()">
+    <button onclick="deleteRow()">Delete</button>
 </form>
-<h3>Contacts</h3>
+<h3 id="header3">Contacts</h3>
 
-<table id="user-table">
+<table>
     <tr>
         <th class="text-bold">Firstname</th>
         <th class="text-bold">Lastname</th>
-        <th class="text-bold">Age</th>
+        <th class="text-bold">Phone</th>
         <th class="text-bold">Address</th>
     </tr>
-    <tbody id="utable"></tbody>
+    <tbody id="utable">
+
+    </tbody>
 </table>
+
 </body>
 </html>
