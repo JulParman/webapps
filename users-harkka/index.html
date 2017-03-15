@@ -12,17 +12,19 @@
     Last name: <input type="text" id="txtlname"><br>
     Age: <input type="text" id="txtage"><br>
     Address: <input type="text" id="txtaddress"><br>
-    <input type="submit" value="Add" onclick="addUser()">
+    <button onclick="addContact()">Add</button>
+    <!--<input type="submit" value="Add" onclick="addContact()">-->
 </form>
-<h3>Users List</h3>
+<h3>Contacts</h3>
 
-<table id="user-table" onsubmit="getUsers()">
+<table id="user-table">
     <tr>
-        <th id="fn" class="text-bold">Firstname</th>
-        <th id="ln" class="text-bold">Lastname</th>
-        <th id="age" class="text-bold">Age</th>
-        <th id="address" class="text-bold">Address</th>
+        <th class="text-bold">Firstname</th>
+        <th class="text-bold">Lastname</th>
+        <th class="text-bold">Age</th>
+        <th class="text-bold">Address</th>
     </tr>
+    <tbody id="utable"></tbody>
 </table>
 </body>
 </html>
