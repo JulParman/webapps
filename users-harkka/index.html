@@ -5,26 +5,32 @@
     <title>Users</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
     <script src="scripts.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
 </head>
 <body onload="loadData()">
 <form class="text-margin">
     First name: <input type="text" id="txtfname"><br>
     Last name: <input type="text" id="txtlname"><br>
     Phone: <input type="text" id="txtphone"><br>
-    Address: <input type="text" id="txtaddress"><br>
+    Street address: <input type="text" id="txtaddress"><br>
+    City: <input type="text" id="txtcity"><br>
     <input type="button" value="Add" onclick="addContact()">
     <button onclick="deleteRow()">Delete</button>
     <button onclick="updateRow()">Update</button>
 </form>
 <h3 id="header3">Contacts</h3>
 
-<table>
+<table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+    <thead>
     <tr>
-        <th class="text-bold">Firstname</th>
-        <th class="text-bold">Lastname</th>
+        <th class="text-bold">First name</th>
+        <th class="text-bold">Last name</th>
         <th class="text-bold">Phone</th>
         <th class="text-bold">Address</th>
     </tr>
+    </thead>
     <tbody id="utable">
 
     </tbody>
