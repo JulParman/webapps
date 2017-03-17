@@ -10,17 +10,41 @@
     <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
 </head>
 <body onload="loadData()">
-<form class="text-margin">
-    First name: <input type="text" id="txtfname"><br>
-    Last name: <input type="text" id="txtlname"><br>
-    Phone: <input type="text" id="txtphone"><br>
-    Street address: <input type="text" id="txtaddress"><br>
-    City: <input type="text" id="txtcity"><br>
-    <input type="button" value="Add" onclick="addContact()">
-    <button onclick="deleteRow()">Delete</button>
-    <button onclick="updateRow()">Update</button>
+<h4>New Contact</h4>
+<form>
+    <div class="mdl-textfield mdl-js-textfield">
+        <input class="mdl-textfield__input" type="text" id="txtfname">
+        <label class="mdl-textfield__label" for="txtfname">First Name</label>
+    </div>
+    <br>
+    <div class="mdl-textfield mdl-js-textfield">
+        <input class="mdl-textfield__input" type="text" id="txtlname">
+        <label class="mdl-textfield__label" for="txtlname">Last Name</label>
+    </div>
+    <br>
+    <div class="mdl-textfield mdl-js-textfield">
+        <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="txtphone">
+        <label class="mdl-textfield__label" for="txtphone">Phone</label>
+        <span class="mdl-textfield__error">Input is not a number!</span>
+    </div>
+    <br>
+    <div class="mdl-textfield mdl-js-textfield">
+        <input class="mdl-textfield__input" type="text" id="txtaddress">
+        <label class="mdl-textfield__label" for="txtaddress">Street Address</label>
+    </div>
+    <br>
+    <div class="mdl-textfield mdl-js-textfield">
+        <input class="mdl-textfield__input" type="text" id="txtcity">
+        <label class="mdl-textfield__label" for="txtcity">City</label>
+    </div>
+    <br>
+    <input type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" value="Add"
+           onclick="addContact()">
+    <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" onclick="deleteRow()">Delete</button>
+    <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" onclick="updateRow()">Update
+    </button>
 </form>
-<h3 id="header3">Contacts</h3>
+<h4 id="header3">Contacts</h4>
 
 <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
     <thead>

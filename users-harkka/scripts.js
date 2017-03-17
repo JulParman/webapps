@@ -42,7 +42,7 @@ function getContact() {
         newRow += "<tr id='" + nro + "'><td>" + contacts[i].firstName + "</td>" +
             "<td>" + contacts[i].lastName + "</td>" +
             "<td>" + contacts[i].phone + "</td>" +
-            "<td>" + "<a target='_blank' href='https://www.google.com/maps/place/" + contacts[i].address + "'>" + contacts[i].address + "</a>" + "</td></tr>"
+            "<td>" + "<a target='_blank' href='https://www.google.com/maps/place/" + contacts[i].address + "'>" + contacts[i].address + "</a>" + "</td></tr>";
         nro++;
     }
     var tableElement = document.getElementById('utable');
@@ -53,6 +53,7 @@ function getContact() {
 function writeLocalStorage(contacts) {
     if (typeof(Storage) !== "undefined") {
         localStorage.setItem("contacts", JSON.stringify(contacts));
+        location.reload();
     } else {
         document.getElementById("header3").innerHTML = "Ei toimi";
     }
